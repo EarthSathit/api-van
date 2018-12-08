@@ -33,8 +33,8 @@ switch($action){
     break;
 
     case 'insert' :
-    /*$id_card = $_POST['id_card'];
-    $initial_id = $_POST['initial_id'];*/
+    /*$id_card = $_POST['id_card'];*/
+    $initial_id = $_POST['initial_id'];
     $name = $_POST['name'];
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
@@ -44,7 +44,7 @@ switch($action){
 
     $strSQL = $str_exe->insert("users",
     "phone, initial_id, name, lastname, email, password",
-    "'$phone', NULL, '$name', '$lastname', '$email', NULL");
+    "'$phone', '$initial_id', '$name', '$lastname', '$email', NULL");
     if($strSQL){
       echo 'success';
     }else {
